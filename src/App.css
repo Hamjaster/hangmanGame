@@ -1,0 +1,273 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+.App{
+  height: 100vh;
+}
+
+
+
+.figure-container {
+  fill: transparent;
+  stroke: #000000;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.App {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.figure-part {
+  /* display: none; */
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.47);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  /* display: none; */
+  align-items: center;
+  justify-content: center;
+}
+.link{
+  text-decoration: none;
+  color: #f1f1f1;
+}
+.link:hover{
+  text-decoration: underline;
+}
+.popup {
+  background: #ec4040;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 40vw;
+}
+
+.key-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #e1e1e1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Styling for the key itself */
+.key-letter .key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the letter inside the key */
+.key-letter .key span {
+  font-weight: bold;
+}
+
+/* Hover effect */
+.key-letter:hover {
+  background-color: #f1f1f1;
+}
+
+.key-letter:hover .key {
+  background-color: #d9d9d9;
+}
+
+
+
+/* CSS */
+
+/* <button class="button-56" role="button">Button 56</button> */
+
+/* CSS */
+
+
+/* CSS */
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 8px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #ff0000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 51px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 22px;
+  padding-right: 22px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 23px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* CSS */
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.hangman {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floating 3s infinite ease-in-out;
+}
+
+.container-fluid{
+  width: 85%;
+
+  /* text-align: center; */
+}
+.heading{
+  font-size: 70px;
+}
+.desc{
+  font-size: 32px;
+}
+
+/* .hangman-rod{
+  background-image: url('/pix/hangman/a.png');
+  width: 188px;
+  height: 305px;
+  background-size: 196px;
+} */
+
+.hangman-img{
+  width: 300px;
+}
+
+@media (max-width:800px) {
+  
+  .heading{
+    font-size: 49px;
+    
+  }
+  .desc{
+    font-size: 22px;
+  }
+  .popup{
+    width: 90vw;
+  }
+}
+@media (max-width:520px){
+  .hangman-img{
+    width: 200px;
+  }
+
+}
+@media (max-width:420px){
+  .hangman-img{
+    width: 140px;
+  }
+
+}
+
+@media (max-width:320px){
+  .desc{
+    font-size: 16px;
+  }
+  .heading{
+    font-size: 34px;
+    
+  }
+  .wrong-words{
+    display: none;
+  }
+ 
+  
+}
+
+
+.ky-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+  background-color: #ff0000;
+  border: solid rgb(250, 0, 0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Styling for the key itself */
+.ky-letter .ky {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Styling for the letter inside the key */
+.ky-letter .ky span {
+  font-weight: bold;
+}
+
+
