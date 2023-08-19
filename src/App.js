@@ -22,7 +22,7 @@ function App() {
   const [status, setstatus] = useState()
   const [Image, setImage] = useState("")
   const [progress, setProgress] = useState(0)
-  const [Source, setSource] = useState(a)  
+  const [Source, setSource] = useState(a)
 
 
   const genRandomWord = async () => {
@@ -64,13 +64,13 @@ function App() {
       let img;
       // console.log(JSON.parse(result).hits[0],'res');
       // console.log('in if')
-      img=JSON.parse(result).hits[0]
-      if (img!==undefined) {
-        img =JSON.parse(result).hits[0].webformatURL
+      img = JSON.parse(result).hits[0]
+      if (img !== undefined) {
+        img = JSON.parse(result).hits[0].webformatURL
 
       }
-      else if (img===undefined) {
-        
+      else if (img === undefined) {
+
         genRandomWord()
       }
       setImage(img)
@@ -81,6 +81,7 @@ function App() {
   }
   useEffect(() => {
     getPhto()
+    // eslint-disable-next-line
   }, [SelectedWord])
 
   useEffect(() => {
@@ -103,8 +104,8 @@ function App() {
               draggable: true,
               progress: undefined,
               theme: "light",
-              });
-              playKeySound(warn)
+            });
+            playKeySound(warn)
           }
         } else {
           if (!WrongLetters.includes(letter)) {
@@ -121,8 +122,8 @@ function App() {
               draggable: true,
               progress: undefined,
               theme: "light",
-              });
-              playKeySound(warn)
+            });
+            playKeySound(warn)
           }
         }
       }
@@ -131,6 +132,7 @@ function App() {
     console.log(CorrectLetters, 'correct letter');
     // console.log(WrongLetters);
     return () => window.removeEventListener('keydown', handleKeydown);
+    // eslint-disable-next-line
   }, [CorrectLetters, WrongLetters, IsPlayable]);
 
   const PlayAgain = () => {
@@ -144,7 +146,7 @@ function App() {
   useEffect(() => {
 
     genRandomWord()
-
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -169,40 +171,40 @@ function App() {
       />
       <div style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(${Image})`,
-        backgroundPosition: "center", backgroundSize: 'cover', height: '100vh', backgroundRepeat:"no-repeat"
-      }} 
-      className="App text-white ">
+        backgroundPosition: "center", backgroundSize: 'cover', height: '100vh', backgroundRepeat: "no-repeat"
+      }}
+        className="App text-white ">
 
 
-      <div className="container-fluid h-100  d-flex flex-column pt-0 pt-sm-2 pt-md-5 pt-lg-5    justify-content-center align-items-center">
+        <div className="container-fluid h-100  d-flex flex-column pt-0 pt-sm-2 pt-md-5 pt-lg-5    justify-content-center align-items-center">
 
-     
 
-        <div  className="heading d-flex flex-row align-items-center">
-            <span  className="fw-bold  ">HANG</span>
-            <span style={{color:'red'}} className="fw-bold ">MAN</span>
-        </div>
-        <p className="desc d-flex flex-column justify-content-center align-items-center">
-        <p style={{marginBottom:'-5px'}} className=" font-monospace  fst-italic">Guess the correct word by pressing letters
-        </p>
-        <span className=" font-monospace fst-italic">
-          (use background as hint)
-        </span>
 
-        </p>
-        <div className="container row">
-          <Figure Source={Source} setSource={setSource}  status={status} setstatus={setstatus} WrongLetters={WrongLetters} />
-          {WrongLetters.length !== 0 ? <Wrongwords className="col-4" WrongLetters={WrongLetters} /> : ""}
-        </div>
-        <Words setCorrectLetters={setCorrectLetters} SelectedWord={SelectedWord} CorrectLetters={CorrectLetters}
-          WrongLetters={WrongLetters}
-        />
+          <div className="heading d-flex flex-row align-items-center">
+            <span className="fw-bold  ">HANG</span>
+            <span style={{ color: 'red' }} className="fw-bold ">MAN</span>
+          </div>
+          <p className="desc d-flex flex-column justify-content-center align-items-center">
+            <p style={{ marginBottom: '-5px' }} className=" font-monospace  fst-italic">Guess the correct word by pressing letters
+            </p>
+            <span className=" font-monospace fst-italic">
+              (use background as hint)
+            </span>
 
-        <Popup playKeySound={playKeySound}  WrongLetters={WrongLetters} PlayAgain={PlayAgain} IsPlayable={IsPlayable} setIsPlayable={setIsPlayable} status={status} SelectedWord={SelectedWord} CorrectLetters={CorrectLetters} />
-        <Keyboard playKeySound={playKeySound} setCorrectLetters={setCorrectLetters} setWrongLetters={setWrongLetters} IsPlayable={IsPlayable} SelectedWord={SelectedWord} CorrectLetters={CorrectLetters} WrongLetters={WrongLetters}/>
+          </p>
+          <div className="container row">
+            <Figure Source={Source} setSource={setSource} status={status} setstatus={setstatus} WrongLetters={WrongLetters} />
+            {WrongLetters.length !== 0 ? <Wrongwords className="col-4" WrongLetters={WrongLetters} /> : ""}
+          </div>
+          <Words setCorrectLetters={setCorrectLetters} SelectedWord={SelectedWord} CorrectLetters={CorrectLetters}
+            WrongLetters={WrongLetters}
+          />
+
+          <Popup playKeySound={playKeySound} WrongLetters={WrongLetters} PlayAgain={PlayAgain} IsPlayable={IsPlayable} setIsPlayable={setIsPlayable} status={status} SelectedWord={SelectedWord} CorrectLetters={CorrectLetters} />
+          <Keyboard playKeySound={playKeySound} setCorrectLetters={setCorrectLetters} setWrongLetters={setWrongLetters} IsPlayable={IsPlayable} SelectedWord={SelectedWord} CorrectLetters={CorrectLetters} WrongLetters={WrongLetters} />
         </div>
       </div>
-      
+
 
     </div>
 
