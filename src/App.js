@@ -40,7 +40,7 @@ function App() {
       const response = await fetch(url, options);
       setProgress(progress + 10)
       const result = await response.text();
-      console.log(JSON.parse(result), Math.floor(Math.random() * 7) + 8);
+
       setProgress(progress + 20)
       setSelectedWord(JSON.parse(result)[0])
       // setSelectedWord("monotheism")
@@ -62,8 +62,7 @@ function App() {
       const result = await response.text();
       setProgress(progress + 20)
       let img;
-      // console.log(JSON.parse(result).hits[0],'res');
-      // console.log('in if')
+
       img = JSON.parse(result).hits[0]
       if (img !== undefined) {
         img = JSON.parse(result).hits[0].webformatURL
@@ -89,7 +88,7 @@ function App() {
       const { key, keyCode } = event;
       if (IsPlayable && (keyCode >= 65 && keyCode <= 90)) {
         const letter = key.toLowerCase();
-        console.log(SelectedWord, 'wordtoguess', letter);
+
         if (SelectedWord.includes(letter)) {
           if (!CorrectLetters.includes(letter)) {
             playKeySound(audio)
@@ -109,7 +108,7 @@ function App() {
           }
         } else {
           if (!WrongLetters.includes(letter)) {
-            console.log(letter, WrongLetters, !WrongLetters.includes(letter));
+
             playKeySound(wrong)
             setWrongLetters(currentLetters => [...currentLetters, letter]);
           } else {
@@ -129,8 +128,7 @@ function App() {
       }
     }
     window.addEventListener('keydown', handleKeydown);
-    console.log(CorrectLetters, 'correct letter');
-    // console.log(WrongLetters);
+
     return () => window.removeEventListener('keydown', handleKeydown);
     // eslint-disable-next-line
   }, [CorrectLetters, WrongLetters, IsPlayable]);

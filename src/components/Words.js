@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
 
 export default function Words(props) {
-  
+
   useEffect(() => {
     props.SelectedWord.split("").map((letter) => {
       if (letter === props.SelectedWord.charAt(0)) {
         props.setCorrectLetters([letter])
       }
+      return 0;
     })
+    // eslint-disable-next-line
   }, [props.SelectedWord])
 
   return (
